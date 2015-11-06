@@ -1,4 +1,4 @@
-# 😸
+# x1f638 😸
 
 This is an example on how to applying MVC, MVP, MVVM in Android.
 

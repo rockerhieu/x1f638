@@ -15,10 +15,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".mvc.MvcActivity" />
-        <activity android:name=".mvp.MvpActivity" />
-        <activity android:name=".mvvm.MvvmActivity" />
-        <activity android:name=".mvvm.rx.MvvmRxActivity" />
+        <activity
+            android:name=".mvc.MvcActivity"
+            android:label="MVC" />
+        <activity
+            android:name=".mvp.MvpActivity"
+            android:label="MVP" />
+        <activity
+            android:name=".mvvm.MvvmActivity"
+            android:label="MVVM" />
+        <activity
+            android:name=".mvvm.rx.MvvmRxActivity"
+            android:label="MVVMRX" />
     </application>
 
 </manifest>

@@ -25,4 +25,9 @@
         android:layout_height="wrap_content"
         android:text="MVVM"
         android:onClick="onMvvmClicked"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MVVMRX"
+        android:onClick="onMvvmRxClicked"/>
 </LinearLayout>

@@ -18,6 +18,7 @@
         <activity android:name=".mvc.MvcActivity" />
         <activity android:name=".mvp.MvpActivity" />
         <activity android:name=".mvvm.MvvmActivity" />
+        <activity android:name=".mvvm.rx.MvvmRxActivity" />
     </application>
 
 </manifest>

@@ -1,5 +1,7 @@
 package io.github.rockerhieu.x1f638.mvp;
 
+import android.support.annotation.VisibleForTesting;
+
 import io.github.rockerhieu.x1f638.Counter;
 
 /**
@@ -10,9 +12,10 @@ public class CounterPresenterImp implements CounterPresenter {
     private Counter counter;
 
     public CounterPresenterImp() {
-        this(new Counter());
+        this(new Counter(0));
     }
 
+    @VisibleForTesting
     public CounterPresenterImp(Counter counter) {
         this.counter = counter;
     }

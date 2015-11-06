@@ -12,7 +12,7 @@ public class CounterTest extends ApplicationTestCase {
     @Override
     public void setUp() throws Exception {
         super.setUp();
-        counter = new Counter();
+        counter = new Counter(0);
     }
 
     @Test

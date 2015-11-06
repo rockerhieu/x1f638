@@ -32,6 +32,14 @@ public class ControllerImpTest extends ApplicationTestCase {
     }
 
     @Test
+    public void testDefaultConstructor() throws Exception {
+        controller = spy(new CounterControllerImp());
+        controller.setOnCounterIncreasedListener(mockOnCounterIncreasedListener);
+        controller.increase();
+        verify(mockOnCounterIncreasedListener).onCounterIncreased(eq(1));
+    }
+
+    @Test
     public void testIncrease() throws Exception {
         controller.increase();
         verify(mockCounter).increase();

@@ -12,6 +12,6 @@ public class MvvmActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ActivityCounterMvvmBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_counter_mvvm);
-        binding.setData(new CounterViewModel());
+        binding.setData(new CounterViewModel(0));
     }
 }

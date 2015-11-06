@@ -6,9 +6,6 @@ package io.github.rockerhieu.x1f638;
 public class Counter {
     private int value;
 
-    public Counter() {
-    }
-
     public Counter(int initialValue) {
         this.value = initialValue;
     }

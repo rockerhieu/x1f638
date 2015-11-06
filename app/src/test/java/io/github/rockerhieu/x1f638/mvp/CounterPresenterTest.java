@@ -32,6 +32,14 @@ public class CounterPresenterTest extends ApplicationTestCase {
     }
 
     @Test
+    public void testDefaultConstructor() throws Exception {
+        counterPresenter = spy(new CounterPresenterImp());
+        counterPresenter.setView(mockCounterView);
+        counterPresenter.onIncreaseClicked();
+        verify(mockCounterView).setCounterText(eq("1"));
+    }
+
+    @Test
     public void testOnIncreaseClicked() throws Exception {
         when(mockCounter.increase()).thenReturn(5);
         counterPresenter.onIncreaseClicked();

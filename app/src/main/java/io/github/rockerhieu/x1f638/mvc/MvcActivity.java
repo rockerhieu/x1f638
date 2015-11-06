@@ -5,9 +5,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
 import io.github.rockerhieu.x1f638.R;
 
 public class MvcActivity extends AppCompatActivity implements OnCounterIncreasedListener {
+    @Bind(R.id.increase)
     Button vIncrease;
     CounterController controller;
 
@@ -15,7 +18,7 @@ public class MvcActivity extends AppCompatActivity implements OnCounterIncreased
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_counter);
-        vIncrease = (Button) findViewById(R.id.increase);
+        ButterKnife.bind(this);
         controller = new CounterControllerImp();
         controller.setOnCounterIncreasedListener(this);
     }

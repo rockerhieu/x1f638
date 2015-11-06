@@ -5,9 +5,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
 import io.github.rockerhieu.x1f638.R;
 
 public class MvpActivity extends AppCompatActivity implements CounterView {
+    @Bind(R.id.increase)
     Button vIncrease;
     CounterPresenter presenter;
 
@@ -15,7 +18,7 @@ public class MvpActivity extends AppCompatActivity implements CounterView {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_counter);
-        vIncrease = (Button) findViewById(R.id.increase);
+        ButterKnife.bind(this);
         presenter = new CounterPresenterImp();
         presenter.setView(this);
     }

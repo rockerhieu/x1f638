@@ -1,5 +1,7 @@
 package io.github.rockerhieu.x1f638.mvc;
 
+import android.support.annotation.VisibleForTesting;
+
 import io.github.rockerhieu.x1f638.Counter;
 
 /**
@@ -10,9 +12,10 @@ public class CounterControllerImp implements CounterController {
     private OnCounterIncreasedListener onCounterIncreasedListener;
 
     public CounterControllerImp() {
-        this(new Counter());
+        this(new Counter(0));
     }
 
+    @VisibleForTesting
     public CounterControllerImp(Counter counter) {
         this.counter = counter;
     }

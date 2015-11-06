@@ -12,10 +12,6 @@ import io.github.rockerhieu.x1f638.BR;
 public class CounterViewModel extends BaseObservable {
     private int value;
 
-    public CounterViewModel() {
-        this(0);
-    }
-
     public CounterViewModel(int initialValue) {
         this.value = initialValue;
     }

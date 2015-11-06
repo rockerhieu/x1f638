@@ -8,6 +8,7 @@ import android.view.View;
 import io.github.rockerhieu.x1f638.mvc.MvcActivity;
 import io.github.rockerhieu.x1f638.mvp.MvpActivity;
 import io.github.rockerhieu.x1f638.mvvm.MvvmActivity;
+import io.github.rockerhieu.x1f638.mvvm.rx.MvvmRxActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,5 +28,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void onMvvmClicked(View view) {
         startActivity(new Intent(this, MvvmActivity.class));
+    }
+
+    public void onMvvmRxClicked(View view) {
+        startActivity(new Intent(this, MvvmRxActivity.class));
     }
 }

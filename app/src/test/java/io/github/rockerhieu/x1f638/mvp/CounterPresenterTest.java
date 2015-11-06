@@ -5,7 +5,6 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import io.github.rockerhieu.x1f638.ApplicationTestCase;
-import io.github.rockerhieu.x1f638.Counter;
 
 import static org.mockito.Matchers.eq;
 import static org.mockito.Mockito.spy;

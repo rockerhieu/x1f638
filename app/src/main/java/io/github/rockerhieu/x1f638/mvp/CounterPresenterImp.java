@@ -1,8 +1,7 @@
 package io.github.rockerhieu.x1f638.mvp;
 
+import android.support.annotation.NonNull;
 import android.support.annotation.VisibleForTesting;
-
-import io.github.rockerhieu.x1f638.Counter;
 
 /**
  * Created by rockerhieu on 11/2/15.
@@ -16,7 +15,7 @@ public class CounterPresenterImp implements CounterPresenter {
     }
 
     @VisibleForTesting
-    public CounterPresenterImp(Counter counter) {
+    public CounterPresenterImp(@NonNull Counter counter) {
         this.counter = counter;
     }
 

@@ -1,6 +1,6 @@
 # x1f638 😸
 
-This is an example on how to applying MVC, MVP, MVVM in Android.
+This is an example on how to applying MVC, MVP, MVVM in Android. See more at http://bit.ly/20C7loC.
 
 [![screencast](http://g.recordit.co/fM6TwuoZxv.gif)](https://appetize.io/app/vtxhukuxuegf5njx3qhhfn5qgg)
 

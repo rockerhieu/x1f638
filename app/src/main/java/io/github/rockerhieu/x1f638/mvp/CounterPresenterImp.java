@@ -26,5 +26,8 @@ public class CounterPresenterImp implements CounterPresenter {
     @Override
     public void onIncreaseClicked() {
         view.setCounterText(String.valueOf(counter.increase()));
+        if (counter.getValue() % 3 == 0) {
+            view.openCounterDetailsScreen(counter.getValue());
+        }
     }
 }

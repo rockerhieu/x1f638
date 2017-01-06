@@ -1,0 +1,67 @@
+apply plugin: 'jacoco'
+
+jacoco {
+  // https://bintray.com/bintray/jcenter/org.jacoco:org.jacoco.core
+  toolVersion = "0.7.7.201606060606"
+}
+
+android {
+  testOptions {
+    unitTests.all {
+      jacoco {
+        includeNoLocationClasses = true
+      }
+    }
+  }
+}
+
+project.afterEvaluate {
+
+  android.applicationVariants.all { variant ->
+    def name = variant.name
+    def testTaskName = "test${name.capitalize()}UnitTest"
+    def classDir = "${project.buildDir}/intermediates/classes/${name}"
+
+    tasks.create(name: "${testTaskName}Coverage", type: JacocoReport, dependsOn: "$testTaskName") {
+      group = "Reporting"
+      description = "Generate Jacoco coverage reports for the ${name.capitalize()} build."
+
+      classDirectories = fileTree(
+          dir: "${classDir}",
+          excludes: [
+              '**/*Activity.class',
+              '**/R*.class',
+              '**/R$*.class',
+              '**/BuildConfig.class',
+              '**/BR.class',
+              '**/Manifest*.*',
+              '**/*$InjectAdapter.class',
+              '**/*$ModuleAdapter.class',
+              '**/*$ExtraInjector*.class',
+              '**/*$ViewInjector*.class',
+              '**/*$ViewBinder*.class',
+              '**/*$Lambda*.class',
+              'android/databinding/**',
+              'io/github/rockerhieu/x1f638/Constants.class',
+              'io/github/rockerhieu/x1f638/databinding/**.class',
+              'io/github/rockerhieu/x1f638/MainActivity.class']
+      )
+
+      sourceDirectories = files(['src/main/java'].plus(android.sourceSets[name].java.srcDirs))
+      executionData = files("${project.buildDir}/jacoco/${testTaskName}.exec")
+
+      reports {
+        xml.enabled = true
+        html.enabled = true
+      }
+
+      doFirst {
+        new File(classDir).eachFileRecurse { file ->
+          if (file.name.contains('$$')) {
+            file.renameTo(file.path.replace('$$', '$'))
+          }
+        }
+      }
+    }
+  }
+}

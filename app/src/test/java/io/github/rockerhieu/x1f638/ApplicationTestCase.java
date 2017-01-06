@@ -12,7 +12,7 @@ import java.lang.reflect.Field;
  * Inherit from this class to create a test.
  */
 @RunWith(ApplicationTestRunner.class)
-@Config(constants = BuildConfig.class, sdk = 21)
+@Config(constants = BuildConfig.class, sdk = 23)
 public abstract class ApplicationTestCase {
 
     @Before

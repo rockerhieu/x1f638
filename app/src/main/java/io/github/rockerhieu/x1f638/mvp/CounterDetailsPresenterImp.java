@@ -1,10 +1,13 @@
 package io.github.rockerhieu.x1f638.mvp;
 
+import android.support.annotation.VisibleForTesting;
+
 /**
  * Created by rockerhieu on 7/31/16.
  */
 public class CounterDetailsPresenterImp implements CounterDetailsPresenter {
-    private CounterDetailsView view;
+    @VisibleForTesting
+    protected CounterDetailsView view;
 
     @Override
     public void setView(CounterDetailsView view) {

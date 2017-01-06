@@ -16,10 +16,12 @@ import java.lang.reflect.Field;
 public abstract class ApplicationTestCase {
 
     @Before
+    @SuppressWarnings("PMD.UncommentedEmptyMethod")
     public void setUp() throws Exception {
     }
 
     @After
+    @SuppressWarnings("PMD.UncommentedEmptyMethod")
     public void tearDown() throws Exception {
     }
 

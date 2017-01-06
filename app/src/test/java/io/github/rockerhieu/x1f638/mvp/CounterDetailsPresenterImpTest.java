@@ -12,9 +12,9 @@ import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.verify;
 
 public class CounterDetailsPresenterImpTest extends ApplicationTestCase {
-  @Mock CounterDetailsView mockView;
+  protected @Mock CounterDetailsView mockView;
 
-  CounterDetailsPresenterImp presenter;
+  protected CounterDetailsPresenterImp presenter;
 
   @Override public void setUp() throws Exception {
     super.setUp();

@@ -16,7 +16,7 @@ import static com.trello.rxlifecycle.ActivityEvent.DESTROY;
 
 public class MvvmRxActivity extends RxAppCompatActivity {
     @Bind(R.id.increase)
-    Button vIncrease;
+    protected Button vIncrease;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -14,12 +14,12 @@ import static org.mockito.Mockito.when;
 public class CounterPresenterTest extends ApplicationTestCase {
 
     @Mock
-    Counter mockCounter;
+    protected Counter mockCounter;
 
     @Mock
-    CounterView mockCounterView;
+    protected CounterView mockCounterView;
 
-    CounterPresenter counterPresenter;
+    protected CounterPresenter counterPresenter;
 
     @Override
     public void setUp() throws Exception {

@@ -16,7 +16,7 @@ import static org.mockito.Mockito.verify;
 
 public class CounterRxViewModelTest extends ApplicationTestCase {
 
-    CounterRxViewModel model;
+    protected CounterRxViewModel model;
 
     @Override
     public void setUp() throws Exception {

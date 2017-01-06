@@ -26,12 +26,12 @@ public class CounterDetailsActivity extends AppCompatActivity implements Counter
     }
 
     @Bind(R.id.counter)
-    TextView vCounter;
+    protected TextView vCounter;
 
     @InjectExtra(Extras.COUNTER)
-    int xCounter;
-    CounterDetailsPresenter presenter;
-    ResourceCallback callback;
+    protected int xCounter;
+    protected CounterDetailsPresenter presenter;
+    protected ResourceCallback callback;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

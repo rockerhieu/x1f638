@@ -11,8 +11,8 @@ import io.github.rockerhieu.x1f638.R;
 
 public class MvcActivity extends AppCompatActivity implements OnCounterIncreasedListener {
     @Bind(R.id.increase)
-    Button vIncrease;
-    CounterController controller;
+    protected Button vIncrease;
+    protected CounterController controller;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

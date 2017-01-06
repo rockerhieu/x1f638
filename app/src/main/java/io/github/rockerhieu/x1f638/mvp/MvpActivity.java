@@ -12,8 +12,8 @@ import io.github.rockerhieu.x1f638.R;
 
 public class MvpActivity extends AppCompatActivity implements CounterView {
     @Bind(R.id.increase)
-    Button vIncrease;
-    CounterPresenter presenter;
+    protected Button vIncrease;
+    protected CounterPresenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

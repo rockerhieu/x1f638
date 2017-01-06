@@ -23,12 +23,11 @@ public class ApplicationTestRunner extends RobolectricTestRunner {
     super(klass);
   }
 
-  @Override
-  protected AndroidManifest getAppManifest(Config config) {
+  @Override protected AndroidManifest getAppManifest(Config config) {
     if (config.constants() == Void.class) {
       Logger.error("Field 'constants' not specified in @Config annotation");
       Logger.error("This is required when using ApplicationTestRunner!");
-      throw new RuntimeException("No 'constants' field in @Config annotation!");
+      throw new TestConfigException("No 'constants' field in @Config annotation!");
     }
 
     final String type = getType(config);
@@ -52,7 +51,8 @@ public class ApplicationTestRunner extends RobolectricTestRunner {
     }
 
     if (FileFsFile.from(BUILD_OUTPUT, "manifests").exists()) {
-      manifest = FileFsFile.from(BUILD_OUTPUT, "manifests", "full", flavor, type, "AndroidManifest.xml");
+      manifest =
+          FileFsFile.from(BUILD_OUTPUT, "manifests", "full", flavor, type, "AndroidManifest.xml");
     } else {
       manifest = FileFsFile.from(BUILD_OUTPUT, "bundles", flavor, type, "AndroidManifest.xml");
     }
@@ -90,6 +90,12 @@ public class ApplicationTestRunner extends RobolectricTestRunner {
       }
     } catch (Throwable e) {
       return null;
+    }
+  }
+
+  public static class TestConfigException extends RuntimeException {
+    public TestConfigException(String message) {
+      super(message);
     }
   }
 }

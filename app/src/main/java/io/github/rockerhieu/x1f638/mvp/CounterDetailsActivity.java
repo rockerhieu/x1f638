@@ -19,19 +19,20 @@ import static io.github.rockerhieu.x1f638.Constants.Extras;
 
 public class CounterDetailsActivity extends AppCompatActivity implements CounterDetailsView, IdlingResource {
 
-    public static Intent getCallingIntent(Context context, int counter) {
-        Intent intent = new Intent(context, CounterDetailsActivity.class);
-        intent.putExtra(Extras.COUNTER, counter);
-        return intent;
-    }
-
     @Bind(R.id.counter)
     protected TextView vCounter;
 
     @InjectExtra(Extras.COUNTER)
     protected int xCounter;
+
     protected CounterDetailsPresenter presenter;
     protected ResourceCallback callback;
+
+    public static Intent getCallingIntent(Context context, int counter) {
+        Intent intent = new Intent(context, CounterDetailsActivity.class);
+        intent.putExtra(Extras.COUNTER, counter);
+        return intent;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

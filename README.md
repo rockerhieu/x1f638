@@ -1,12 +1,13 @@
 [![CircleCI](https://img.shields.io/circleci/project/github/rockerhieu/x1f638.svg)](https://circleci.com/gh/rockerhieu/x1f638/)
 [![Codacy grade](https://img.shields.io/codacy/grade/785018a31f364bd0910d5c36abb80c45.svg)](https://www.codacy.com/app/rockerhieu/x1f638/dashboard)
 [![Codecov](https://img.shields.io/codecov/c/github/rockerhieu/x1f638.svg)](https://codecov.io/gh/rockerhieu/x1f638/)
+[![Preview the app](https://img.shields.io/badge/Preview-Appetize.io-orange.svg)](https://appetize.io/app/dwjpd65rfzk9zxcf61jtnb2v7w)
 
 # x1f638 😸
 
 This is an example on how to applying MVC, MVP, MVVM in Android. See more at http://bit.ly/20C7loC.
 
-[![screencast](http://g.recordit.co/fM6TwuoZxv.gif)](https://appetize.io/app/vtxhukuxuegf5njx3qhhfn5qgg)
+[![screencast](http://g.recordit.co/fM6TwuoZxv.gif)](https://appetize.io/app/dwjpd65rfzk9zxcf61jtnb2v7w)
 
 # Setup
 Create `gradle.properties` in the root project folder with content:

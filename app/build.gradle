@@ -3,6 +3,7 @@ plugins {
 }
 
 apply plugin: 'com.android.application'
+apply from: 'fabric.gradle'
 apply from: 'jacoco.gradle'
 
 android {

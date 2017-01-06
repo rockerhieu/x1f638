@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="io.github.rockerhieu.x1f638">
 
+  <uses-permission android:name="android.permission.INTERNET"/>
   <application
       android:allowBackup="true"
       android:icon="@mipmap/ic_launcher"
@@ -30,6 +31,11 @@
     <activity
         android:name=".mvvm.rx.MvvmRxActivity"
         android:label="MVVMRX"/>
+
+    <meta-data
+        android:name="io.fabric.ApiKey"
+        android:value="7ffb93e972e36a2352a3f4272039147139427ab9"
+        />
   </application>
 
 </manifest>

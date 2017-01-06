@@ -13,37 +13,32 @@ import static org.mockito.Mockito.when;
 
 public class ControllerImpTest extends ApplicationTestCase {
 
-    @Mock
-    protected Counter mockCounter;
+  @Mock protected Counter mockCounter;
 
-    @Mock
-    protected OnCounterIncreasedListener mockOnCounterIncreasedListener;
+  @Mock protected OnCounterIncreasedListener mockOnCounterIncreasedListener;
 
-    protected CounterController controller;
+  protected CounterController controller;
 
-    @Override
-    public void setUp() throws Exception {
-        super.setUp();
-        MockitoAnnotations.initMocks(this);
+  @Override public void setUp() throws Exception {
+    super.setUp();
+    MockitoAnnotations.initMocks(this);
 
-        controller = spy(new CounterControllerImp(mockCounter));
-    }
+    controller = spy(new CounterControllerImp(mockCounter));
+  }
 
-    @Test
-    public void testDefaultConstructor() throws Exception {
-        controller = spy(new CounterControllerImp());
-        controller.setOnCounterIncreasedListener(mockOnCounterIncreasedListener);
-        controller.increase();
-        verify(mockOnCounterIncreasedListener).onCounterIncreased(eq(1));
-    }
+  @Test public void testDefaultConstructor() throws Exception {
+    controller = spy(new CounterControllerImp());
+    controller.setOnCounterIncreasedListener(mockOnCounterIncreasedListener);
+    controller.increase();
+    verify(mockOnCounterIncreasedListener).onCounterIncreased(eq(1));
+  }
 
-    @Test
-    public void testIncrease() throws Exception {
-        controller.increase();
-        verify(mockCounter).increase();
+  @Test public void testIncrease() throws Exception {
+    controller.increase();
+    verify(mockCounter).increase();
 
-        when(mockCounter.increase()).thenReturn(5);
-        controller.increase();
-        verify(mockCounter, times(2)).increase();
-    }
+    when(mockCounter.increase()).thenReturn(5);
+    controller.increase();
+    verify(mockCounter, times(2)).increase();
+  }
 }

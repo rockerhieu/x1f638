@@ -15,56 +15,50 @@ import io.github.rockerhieu.x1f638.R;
 
 import static io.github.rockerhieu.x1f638.Constants.Extras;
 
-public class CounterDetailsActivity extends AppCompatActivity implements CounterDetailsView, IdlingResource {
+public class CounterDetailsActivity extends AppCompatActivity
+    implements CounterDetailsView, IdlingResource {
 
-    @Bind(R.id.counter)
-    protected TextView vCounter;
+  @Bind(R.id.counter) protected TextView vCounter;
 
-    @InjectExtra(Extras.COUNTER)
-    protected int xCounter;
+  @InjectExtra(Extras.COUNTER) protected int xCounter;
 
-    protected CounterDetailsPresenter presenter;
-    protected ResourceCallback callback;
+  protected CounterDetailsPresenter presenter;
+  protected ResourceCallback callback;
 
-    public static Intent getCallingIntent(Context context, int counter) {
-        Intent intent = new Intent(context, CounterDetailsActivity.class);
-        intent.putExtra(Extras.COUNTER, counter);
-        return intent;
-    }
+  public static Intent getCallingIntent(Context context, int counter) {
+    Intent intent = new Intent(context, CounterDetailsActivity.class);
+    intent.putExtra(Extras.COUNTER, counter);
+    return intent;
+  }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_counter_details);
-        ButterKnife.bind(this);
-        Dart.inject(this);
-        presenter = new CounterDetailsPresenterImp();
-        presenter.setView(this);
-        presenter.onCreate();
-    }
+  @Override protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_counter_details);
+    ButterKnife.bind(this);
+    Dart.inject(this);
+    presenter = new CounterDetailsPresenterImp();
+    presenter.setView(this);
+    presenter.onCreate();
+  }
 
-    @Override
-    public void waitAndSetCounterText(long waitTimeInMillis) {
-        vCounter.postDelayed(() -> {
-            vCounter.setText(String.format("You found %s!", xCounter));
-            if (callback != null) {
-                callback.onTransitionToIdle();
-            }
-        }, waitTimeInMillis);
-    }
+  @Override public void waitAndSetCounterText(long waitTimeInMillis) {
+    vCounter.postDelayed(() -> {
+      vCounter.setText(String.format("You found %s!", xCounter));
+      if (callback != null) {
+        callback.onTransitionToIdle();
+      }
+    }, waitTimeInMillis);
+  }
 
-    @Override
-    public String getName() {
-        return "CounterDetailsActivity";
-    }
+  @Override public String getName() {
+    return "CounterDetailsActivity";
+  }
 
-    @Override
-    public boolean isIdleNow() {
-        return !TextUtils.isEmpty(vCounter.getText());
-    }
+  @Override public boolean isIdleNow() {
+    return !TextUtils.isEmpty(vCounter.getText());
+  }
 
-    @Override
-    public void registerIdleTransitionCallback(ResourceCallback callback) {
-        this.callback = callback;
-    }
+  @Override public void registerIdleTransitionCallback(ResourceCallback callback) {
+    this.callback = callback;
+  }
 }

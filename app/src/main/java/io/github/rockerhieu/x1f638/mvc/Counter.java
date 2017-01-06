@@ -4,27 +4,27 @@ package io.github.rockerhieu.x1f638.mvc;
  * Created by rockerhieu on 11/2/15.
  */
 public class Counter {
-    private int value;
+  private int value;
 
-    private OnCounterIncreasedListener onCounterIncreasedListener;
+  private OnCounterIncreasedListener onCounterIncreasedListener;
 
-    public Counter(int initialValue) {
-        this.value = initialValue;
+  public Counter(int initialValue) {
+    this.value = initialValue;
+  }
+
+  public int getValue() {
+    return value;
+  }
+
+  public int increase() {
+    ++value;
+    if (onCounterIncreasedListener != null) {
+      onCounterIncreasedListener.onCounterIncreased(value);
     }
+    return value;
+  }
 
-    public int getValue() {
-        return value;
-    }
-
-    public int increase() {
-        ++value;
-        if (onCounterIncreasedListener != null) {
-            onCounterIncreasedListener.onCounterIncreased(value);
-        }
-        return value;
-    }
-
-    public void setOnCounterIncreasedListener(OnCounterIncreasedListener listener) {
-        this.onCounterIncreasedListener = listener;
-    }
+  public void setOnCounterIncreasedListener(OnCounterIncreasedListener listener) {
+    this.onCounterIncreasedListener = listener;
+  }
 }

@@ -12,35 +12,30 @@ import static org.mockito.Mockito.when;
 
 public class CounterPresenterTest extends ApplicationTestCase {
 
-    @Mock
-    protected Counter mockCounter;
+  @Mock protected Counter mockCounter;
 
-    @Mock
-    protected CounterView mockCounterView;
+  @Mock protected CounterView mockCounterView;
 
-    protected CounterPresenter counterPresenter;
+  protected CounterPresenter counterPresenter;
 
-    @Override
-    public void setUp() throws Exception {
-        super.setUp();
-        MockitoAnnotations.initMocks(this);
+  @Override public void setUp() throws Exception {
+    super.setUp();
+    MockitoAnnotations.initMocks(this);
 
-        counterPresenter = spy(new CounterPresenterImp(mockCounter));
-        counterPresenter.setView(mockCounterView);
-    }
+    counterPresenter = spy(new CounterPresenterImp(mockCounter));
+    counterPresenter.setView(mockCounterView);
+  }
 
-    @Test
-    public void testDefaultConstructor() throws Exception {
-        counterPresenter = spy(new CounterPresenterImp());
-        counterPresenter.setView(mockCounterView);
-        counterPresenter.onIncreaseClicked();
-        verify(mockCounterView).setCounterText(eq("1"));
-    }
+  @Test public void testDefaultConstructor() throws Exception {
+    counterPresenter = spy(new CounterPresenterImp());
+    counterPresenter.setView(mockCounterView);
+    counterPresenter.onIncreaseClicked();
+    verify(mockCounterView).setCounterText(eq("1"));
+  }
 
-    @Test
-    public void testOnIncreaseClicked() throws Exception {
-        when(mockCounter.increase()).thenReturn(5);
-        counterPresenter.onIncreaseClicked();
-        verify(mockCounterView).setCounterText(eq("5"));
-    }
+  @Test public void testOnIncreaseClicked() throws Exception {
+    when(mockCounter.increase()).thenReturn(5);
+    counterPresenter.onIncreaseClicked();
+    verify(mockCounterView).setCounterText(eq("5"));
+  }
 }

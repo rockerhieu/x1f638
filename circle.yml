@@ -13,5 +13,7 @@ dependencies:
     - /usr/local/android-sdk-linux/build-tools/25.0.2
     - /usr/local/android-sdk-linux/extras/android/m2repository
 
-after_success:
+test:
+  post:
+    - ./gradlew testDebugUnitTestCoverage
     - bash <(curl -s https://codecov.io/bash)

@@ -1,10 +1,18 @@
 plugins {
   id "me.tatarka.retrolambda" version "3.2.3"
+  id "io.github.rockerhieu.versionberg" version "1.0.0"
 }
 
 apply plugin: 'com.android.application'
 apply plugin: 'io.fabric'
 apply from: 'jacoco.gradle'
+
+versionberg {
+  major 1
+  minor 0
+  nameTemplate '${major}.${minor}.${commitCount}.${commitSha}'
+  codeTemplate '(((${major} * 100) + ${minor}) * 100) * 100000 + ${build}'
+}
 
 android {
   compileSdkVersion 25
@@ -14,8 +22,8 @@ android {
     applicationId "io.github.rockerhieu.x1f638"
     minSdkVersion 16
     targetSdkVersion 25
-    versionCode 1
-    versionName "1.0"
+    versionCode versionberg.code
+    versionName versionberg.name
     testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
     ext.betaDistributionReleaseNotes="${projectDir}/release_notes.sh".execute().text
     ext.betaDistributionEmails="rockerhieu@gmail.com"

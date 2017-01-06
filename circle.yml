@@ -14,6 +14,9 @@ dependencies:
     - /usr/local/android-sdk-linux/extras/android/m2repository
 
 test:
-  post:
+  override:
     - ./gradlew testDebugUnitTestCoverage
+    - cp "app/build/outputs/reports" $CIRCLE_ARTIFACTS
+    - cp "app/build/jacoco" $CIRCLE_ARTIFACTS
+    - cp "app/build/test-results" $CIRCLE_TEST_REPORTS
     - bash <(curl -s https://codecov.io/bash)

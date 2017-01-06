@@ -8,3 +8,7 @@ dependencies:
     - /usr/local/android-sdk-linux/platforms/android-25
     - /usr/local/android-sdk-linux/build-tools/25.0.2
     - /usr/local/android-sdk-linux/extras/android/m2repository
+
+test:
+  post:
+    - bash <(curl -s https://codecov.io/bash)

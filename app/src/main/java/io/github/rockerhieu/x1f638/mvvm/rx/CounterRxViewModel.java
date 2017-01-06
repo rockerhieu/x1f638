@@ -1,7 +1,6 @@
 package io.github.rockerhieu.x1f638.mvvm.rx;
 
 import android.view.View;
-
 import butterknife.OnClick;
 import io.github.rockerhieu.x1f638.R;
 import rx.subjects.BehaviorSubject;

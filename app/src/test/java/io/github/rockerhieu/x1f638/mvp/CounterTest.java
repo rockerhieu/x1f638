@@ -1,8 +1,7 @@
 package io.github.rockerhieu.x1f638.mvp;
 
-import org.junit.Test;
-
 import io.github.rockerhieu.x1f638.ApplicationTestCase;
+import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;

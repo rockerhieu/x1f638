@@ -7,12 +7,10 @@ import android.support.test.espresso.IdlingResource;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.widget.TextView;
-
-import com.f2prateek.dart.Dart;
-import com.f2prateek.dart.InjectExtra;
-
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import com.f2prateek.dart.Dart;
+import com.f2prateek.dart.InjectExtra;
 import io.github.rockerhieu.x1f638.R;
 
 import static io.github.rockerhieu.x1f638.Constants.Extras;

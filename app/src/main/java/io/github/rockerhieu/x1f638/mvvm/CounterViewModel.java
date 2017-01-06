@@ -3,7 +3,6 @@ package io.github.rockerhieu.x1f638.mvvm;
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
 import android.view.View;
-
 import io.github.rockerhieu.x1f638.BR;
 
 /**

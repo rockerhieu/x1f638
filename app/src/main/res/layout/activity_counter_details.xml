@@ -7,13 +7,15 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".mvp.CounterDetailsActivity">
+    tools:context=".mvp.CounterDetailsActivity"
+    >
 
-    <TextView
-        android:id="@+id/counter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:textSize="60sp"
-        tools:text="0" />
+  <TextView
+      android:id="@+id/counter"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_centerInParent="true"
+      android:textSize="60sp"
+      tools:text="0"
+      />
 </RelativeLayout>

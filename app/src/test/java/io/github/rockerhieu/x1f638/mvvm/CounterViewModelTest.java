@@ -1,10 +1,9 @@
 package io.github.rockerhieu.x1f638.mvvm;
 
-import org.junit.Test;
-import org.mockito.MockitoAnnotations;
-
 import io.github.rockerhieu.x1f638.ApplicationTestCase;
 import io.github.rockerhieu.x1f638.BR;
+import org.junit.Test;
+import org.mockito.MockitoAnnotations;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;

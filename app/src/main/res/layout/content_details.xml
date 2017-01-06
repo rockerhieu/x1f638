@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/content_details"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="io.github.rockerhieu.x1f638.mvp.DetailsActivity"
-    tools:showIn="@layout/activity_details">
+    tools:showIn="@layout/activity_details"
+    >
 
-    <TextView
-        android:id="@+id/counter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="60sp"
-        tools:text="10"
-        tools:layout_editor_absoluteX="168dp"
-        tools:layout_editor_absoluteY="298dp" />
+  <TextView
+      android:id="@+id/counter"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:textSize="60sp"
+      tools:layout_editor_absoluteX="168dp"
+      tools:layout_editor_absoluteY="298dp"
+      tools:text="10"
+      />
 </android.support.constraint.ConstraintLayout>

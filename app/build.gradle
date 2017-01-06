@@ -1,63 +1,63 @@
 plugins {
-    id "me.tatarka.retrolambda" version "3.2.3"
+  id "me.tatarka.retrolambda" version "3.2.3"
 }
 
 apply plugin: 'com.android.application'
 apply from: 'jacoco.gradle'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+  compileSdkVersion 25
+  buildToolsVersion "25.0.2"
 
-    defaultConfig {
-        applicationId "io.github.rockerhieu.x1f638"
-        minSdkVersion 16
-        targetSdkVersion 25
-        versionCode 1
-        versionName "1.0"
-        testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
+  defaultConfig {
+    applicationId "io.github.rockerhieu.x1f638"
+    minSdkVersion 16
+    targetSdkVersion 25
+    versionCode 1
+    versionName "1.0"
+    testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
+  }
+  buildTypes {
+    debug {
+      testCoverageEnabled true
     }
-    buildTypes {
-        debug {
-            testCoverageEnabled true
-        }
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
     }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-    lintOptions {
-        disable 'InvalidPackage'
-    }
-    packagingOptions {
-        exclude 'META-INF/services/javax.annotation.processing.Processor'
-    }
-    dataBinding {
-        enabled = true
-    }
+  }
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
+  lintOptions {
+    disable 'InvalidPackage'
+  }
+  packagingOptions {
+    exclude 'META-INF/services/javax.annotation.processing.Processor'
+  }
+  dataBinding {
+    enabled = true
+  }
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+  compile fileTree(dir: 'libs', include: ['*.jar'])
 
-    compile 'com.android.support:appcompat-v7:25.1.0'
-    compile 'io.reactivex:rxjava:1.2.4'
-    compile 'io.reactivex:rxandroid:1.2.1'
-    compile 'com.jakewharton.rxbinding:rxbinding:0.3.0'
-    compile 'com.jakewharton:butterknife:7.0.1'
-    compile 'com.trello:rxlifecycle:0.3.0'
-    compile 'com.trello:rxlifecycle-components:0.3.0'
-    compile 'com.android.support:design:25.1.0'
-    compile 'com.f2prateek.dart:dart:2.0.0'
-    provided 'com.f2prateek.dart:dart-processor:2.0.0'
-    testCompile 'junit:junit:4.12'
-    testCompile 'org.robolectric:robolectric:3.2'
-    testCompile 'org.mockito:mockito-core:1.10.9'
-    testCompile 'org.hamcrest:hamcrest-core:1.2.1'
-    compile 'com.android.support.test.espresso:espresso-core:2.2.2'
-    compile 'com.android.support.test:runner:0.5'
+  compile 'com.android.support:appcompat-v7:25.1.0'
+  compile 'io.reactivex:rxjava:1.2.4'
+  compile 'io.reactivex:rxandroid:1.2.1'
+  compile 'com.jakewharton.rxbinding:rxbinding:0.3.0'
+  compile 'com.jakewharton:butterknife:7.0.1'
+  compile 'com.trello:rxlifecycle:0.3.0'
+  compile 'com.trello:rxlifecycle-components:0.3.0'
+  compile 'com.android.support:design:25.1.0'
+  compile 'com.f2prateek.dart:dart:2.0.0'
+  provided 'com.f2prateek.dart:dart-processor:2.0.0'
+  testCompile 'junit:junit:4.12'
+  testCompile 'org.robolectric:robolectric:3.2'
+  testCompile 'org.mockito:mockito-core:1.10.9'
+  testCompile 'org.hamcrest:hamcrest-core:1.2.1'
+  compile 'com.android.support.test.espresso:espresso-core:2.2.2'
+  compile 'com.android.support.test:runner:0.5'
 }

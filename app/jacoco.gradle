@@ -27,26 +27,23 @@ project.afterEvaluate {
       group = "Reporting"
       description = "Generate Jacoco coverage reports for the ${name.capitalize()} build."
 
-      classDirectories = fileTree(
-          dir: "${classDir}",
-          excludes: [
-              '**/*Activity.class',
-              '**/R*.class',
-              '**/R$*.class',
-              '**/BuildConfig.class',
-              '**/BR.class',
-              '**/Manifest*.*',
-              '**/*$InjectAdapter.class',
-              '**/*$ModuleAdapter.class',
-              '**/*$ExtraInjector*.class',
-              '**/*$ViewInjector*.class',
-              '**/*$ViewBinder*.class',
-              '**/*$Lambda*.class',
-              'android/databinding/**',
-              'io/github/rockerhieu/x1f638/Constants.class',
-              'io/github/rockerhieu/x1f638/databinding/**.class',
-              'io/github/rockerhieu/x1f638/MainActivity.class']
-      )
+      classDirectories = fileTree(dir: "${classDir}",
+          excludes: ['**/*Activity.class',
+                     '**/R*.class',
+                     '**/R$*.class',
+                     '**/BuildConfig.class',
+                     '**/BR.class',
+                     '**/Manifest*.*',
+                     '**/*$InjectAdapter.class',
+                     '**/*$ModuleAdapter.class',
+                     '**/*$ExtraInjector*.class',
+                     '**/*$ViewInjector*.class',
+                     '**/*$ViewBinder*.class',
+                     '**/*$Lambda*.class',
+                     'android/databinding/**',
+                     'io/github/rockerhieu/x1f638/Constants.class',
+                     'io/github/rockerhieu/x1f638/databinding/**.class',
+                     'io/github/rockerhieu/x1f638/MainActivity.class'])
 
       sourceDirectories = files(['src/main/java'].plus(android.sourceSets[name].java.srcDirs))
       executionData = files("${project.buildDir}/jacoco/${testTaskName}.exec")

@@ -3,11 +3,9 @@ package io.github.rockerhieu.x1f638.mvvm.rx;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
-
-import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
-
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
 import io.github.rockerhieu.x1f638.R;
 import rx.Observable;
 import rx.functions.Func1;

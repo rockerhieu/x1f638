@@ -1,0 +1,18 @@
+dependencies:
+  pre:
+    - if [ ! -d "/usr/local/android-sdk-linux/platforms/android-25" ]; then echo y | android update sdk --no-ui --all --filter "android-25"; fi
+    - if [ ! -d "/usr/local/android-sdk-linux/build-tools/25.0.2" ]; then echo y | android update sdk --no-ui --all --filter "build-tools-25.0.2"; fi
+    - if [ ! -d "/usr/local/android-sdk-linux/extras/android/m2repository/com/android/support/design/25.0.0" ]; then echo y | android update sdk --no-ui --all --filter "extra-android-m2repository"; fi
+
+  cache_directories:
+    - /usr/local/android-sdk-linux/platforms/android-25
+    - /usr/local/android-sdk-linux/build-tools/25.0.2
+    - /usr/local/android-sdk-linux/extras/android/m2repository
+
+test:
+  override:
+    - ./gradlew jacocoDebugUnitTest
+    - cp -r "app/build/reports" $CIRCLE_ARTIFACTS
+    - cp -r "app/build/jacoco" $CIRCLE_ARTIFACTS
+    - cp -r "app/build/test-results" $CIRCLE_TEST_REPORTS
+    - bash <(curl -s https://codecov.io/bash)

@@ -22,6 +22,9 @@
             android:name=".mvp.MvpActivity"
             android:label="MVP" />
         <activity
+            android:name=".mvp.CounterDetailsActivity"
+            android:label="MVP" />
+        <activity
             android:name=".mvvm.MvvmActivity"
             android:label="MVVM" />
         <activity

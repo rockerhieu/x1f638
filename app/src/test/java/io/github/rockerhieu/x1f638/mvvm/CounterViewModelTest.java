@@ -13,7 +13,7 @@ import static org.mockito.Mockito.verify;
 
 public class CounterViewModelTest extends ApplicationTestCase {
 
-    CounterViewModel model;
+    protected CounterViewModel model;
 
     @Override
     public void setUp() throws Exception {

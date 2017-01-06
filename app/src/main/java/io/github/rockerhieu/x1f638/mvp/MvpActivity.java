@@ -1,5 +1,6 @@
 package io.github.rockerhieu.x1f638.mvp;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -11,8 +12,8 @@ import io.github.rockerhieu.x1f638.R;
 
 public class MvpActivity extends AppCompatActivity implements CounterView {
     @Bind(R.id.increase)
-    Button vIncrease;
-    CounterPresenter presenter;
+    protected Button vIncrease;
+    protected CounterPresenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,5 +31,16 @@ public class MvpActivity extends AppCompatActivity implements CounterView {
     @Override
     public void setCounterText(String text) {
         vIncrease.setText(text);
+    }
+
+    @Override
+    public void openCounterDetailsScreen(int counter) {
+        ProgressDialog dialog = new ProgressDialog(this);
+        dialog.setMessage("Opening the details screen...");
+        dialog.show();
+        vIncrease.postDelayed(() -> {
+            dialog.dismiss();
+            startActivity(CounterDetailsActivity.getCallingIntent(this, counter));
+        }, 3000);
     }
 }

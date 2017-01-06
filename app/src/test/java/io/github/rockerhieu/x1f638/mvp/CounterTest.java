@@ -9,7 +9,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 public class CounterTest extends ApplicationTestCase {
 
-    Counter counter;
+    protected Counter counter;
 
     @Override
     public void setUp() throws Exception {

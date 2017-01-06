@@ -5,4 +5,6 @@ package io.github.rockerhieu.x1f638.mvp;
  */
 public interface CounterView {
     void setCounterText(String text);
+
+    void openCounterDetailsScreen(int counter);
 }

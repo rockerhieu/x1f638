@@ -15,12 +15,12 @@ import static org.mockito.Mockito.when;
 public class ControllerImpTest extends ApplicationTestCase {
 
     @Mock
-    Counter mockCounter;
+    protected Counter mockCounter;
 
     @Mock
-    OnCounterIncreasedListener mockOnCounterIncreasedListener;
+    protected OnCounterIncreasedListener mockOnCounterIncreasedListener;
 
-    CounterController controller;
+    protected CounterController controller;
 
     @Override
     public void setUp() throws Exception {

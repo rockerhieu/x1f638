@@ -6,7 +6,7 @@ dependencies:
     - echo "apiSecret=$FABRIC_SECRET" >> app/fabric.properties
     - curl -sL https://github.com/jpm4j/jpm4j.installers/raw/master/dist/biz.aQute.jpm.run.jar >jpm4j.jar
     - sudo java -jar jpm4j.jar -g init
-    - jpm install com.codacy:codacy-coverage-reporter:assembly
+    - sudo jpm install com.codacy:codacy-coverage-reporter:assembly
 
   cache_directories:
     - /usr/local/android-sdk-linux/platforms/android-25

@@ -3,7 +3,7 @@ plugins {
 }
 
 apply plugin: 'com.android.application'
-apply from: 'fabric.gradle'
+apply plugin: 'io.fabric'
 apply from: 'jacoco.gradle'
 
 android {
@@ -17,6 +17,8 @@ android {
     versionCode 1
     versionName "1.0"
     testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
+    ext.betaDistributionReleaseNotes="${projectDir}/release_notes.sh".execute().text
+    ext.betaDistributionEmails="rockerhieu@gmail.com"
   }
   buildTypes {
     debug {
@@ -42,9 +44,16 @@ android {
   }
 }
 
+repositories {
+  maven { url 'https://maven.fabric.io/public' }
+}
+
 dependencies {
   compile fileTree(dir: 'libs', include: ['*.jar'])
 
+  compile('com.crashlytics.sdk.android:crashlytics:2.6.5@aar') {
+    transitive = true;
+  }
   compile 'com.android.support:appcompat-v7:25.1.0'
   compile 'io.reactivex:rxjava:1.2.4'
   compile 'io.reactivex:rxandroid:1.2.1'

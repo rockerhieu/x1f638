@@ -20,9 +20,10 @@ project.afterEvaluate {
   android.applicationVariants.all { variant ->
     def name = variant.name
     def testTaskName = "test${name.capitalize()}UnitTest"
+    def coverageTaskName = "jacoco${name.capitalize()}UnitTest"
     def classDir = "${project.buildDir}/intermediates/classes/${name}"
 
-    tasks.create(name: "${testTaskName}Coverage", type: JacocoReport, dependsOn: "$testTaskName") {
+    tasks.create(name: "${coverageTaskName}", type: JacocoReport, dependsOn: "$testTaskName") {
       group = "Reporting"
       description = "Generate Jacoco coverage reports for the ${name.capitalize()} build."
 

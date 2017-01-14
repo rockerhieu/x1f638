@@ -15,7 +15,7 @@ dependencies:
 
 test:
   override:
-    - ./gradlew jacocoDebugUnitTest
+    - ./gradlew jacocoDebugUnitTest lintDebug
     - cp -r "app/build/reports" $CIRCLE_ARTIFACTS
     - cp -r "app/build/jacoco" $CIRCLE_ARTIFACTS
     - cp -r "app/build/test-results" $CIRCLE_TEST_REPORTS

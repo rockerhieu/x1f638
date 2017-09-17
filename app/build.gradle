@@ -1,9 +1,10 @@
 plugins {
-  id "me.tatarka.retrolambda" version "3.2.3"
   id "io.github.rockerhieu.versionberg" version "1.0.0"
 }
 
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 apply plugin: 'io.fabric'
 apply from: 'jacoco.gradle'
 
@@ -15,13 +16,13 @@ versionberg {
 }
 
 android {
-  compileSdkVersion 25
-  buildToolsVersion "25.0.2"
+  compileSdkVersion 26
+  buildToolsVersion "26.0.1"
 
   defaultConfig {
     applicationId "io.github.rockerhieu.x1f638"
     minSdkVersion 16
-    targetSdkVersion 25
+    targetSdkVersion 26
     versionCode versionberg.code
     versionName versionberg.name
     testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
@@ -54,28 +55,32 @@ android {
 
 repositories {
   maven { url 'https://maven.fabric.io/public' }
+    mavenCentral()
 }
 
 dependencies {
-  compile fileTree(dir: 'libs', include: ['*.jar'])
+  implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-  compile('com.crashlytics.sdk.android:crashlytics:2.6.5@aar') {
-    transitive = true;
+  implementation('com.crashlytics.sdk.android:crashlytics:2.6.5@aar') {
+    transitive = true
   }
-  compile 'com.android.support:appcompat-v7:25.1.0'
-  compile 'io.reactivex:rxjava:1.2.4'
-  compile 'io.reactivex:rxandroid:1.2.1'
-  compile 'com.jakewharton.rxbinding:rxbinding:0.3.0'
-  compile 'com.jakewharton:butterknife:7.0.1'
-  compile 'com.trello:rxlifecycle:0.3.0'
-  compile 'com.trello:rxlifecycle-components:0.3.0'
-  compile 'com.android.support:design:25.1.0'
-  compile 'com.f2prateek.dart:dart:2.0.0'
-  provided 'com.f2prateek.dart:dart-processor:2.0.0'
-  testCompile 'junit:junit:4.12'
-  testCompile 'org.robolectric:robolectric:3.2'
-  testCompile 'org.mockito:mockito-core:1.10.9'
-  testCompile 'org.hamcrest:hamcrest-core:1.2.1'
-  compile 'com.android.support.test.espresso:espresso-core:2.2.2'
-  compile 'com.android.support.test:runner:0.5'
+  implementation 'com.android.support:appcompat-v7:26.0.1'
+  implementation 'io.reactivex:rxjava:1.2.4'
+  implementation 'io.reactivex:rxandroid:1.2.1'
+  implementation 'com.jakewharton.rxbinding:rxbinding:0.3.0'
+  implementation 'com.jakewharton:butterknife:8.8.1'
+  kapt 'com.jakewharton:butterknife-compiler:8.8.1'
+  implementation 'com.trello:rxlifecycle:0.3.0'
+  implementation 'com.trello:rxlifecycle-components:0.3.0'
+  implementation 'com.android.support:design:26.0.1'
+  implementation 'com.f2prateek.dart:dart:2.0.2'
+  kapt 'com.f2prateek.dart:dart-processor:2.0.2'
+  testImplementation 'junit:junit:4.12'
+  testImplementation 'org.robolectric:robolectric:3.2'
+  testImplementation 'org.mockito:mockito-core:1.10.9'
+  testImplementation 'org.hamcrest:hamcrest-core:1.2.1'
+  implementation 'com.android.support.test.espresso:espresso-core:2.2.2'
+  implementation 'com.android.support.test:runner:0.5'
+  implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+  kapt "com.android.databinding:compiler:3.0.0-beta5"
 }

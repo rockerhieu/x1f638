@@ -7,7 +7,7 @@ import android.support.test.espresso.IdlingResource;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.widget.TextView;
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import com.f2prateek.dart.Dart;
 import com.f2prateek.dart.InjectExtra;
@@ -18,7 +18,7 @@ import static io.github.rockerhieu.x1f638.Constants.Extras;
 public class CounterDetailsActivity extends AppCompatActivity
     implements CounterDetailsView, IdlingResource {
 
-  @Bind(R.id.counter) protected TextView vCounter;
+  @BindView(R.id.counter) protected TextView vCounter;
 
   @InjectExtra(Extras.COUNTER) protected int xCounter;
 
